@@ -1,14 +1,25 @@
-public class singleton{  
+public class Singleton{
     static String c;
-    public singleton(String a,String b)
+    public static Singleton single = null;
+
+    private Singleton(String a,String b)
     {
-        this.c=a.concat(b);  
-    }   
-    
-    public static void main(String[] args) throws Exception{  
-        String a="Instance";
-        String b=" Created";
-        singleton create_obj=new singleton(a,b);
-        System.out.println(create_obj.c);
-    }  
-}  
+        this.c=a.concat(b);
+    }
+
+    public static Singleton getInstance(String a, String b) {
+        if (single == null)
+            single = new Singleton(a, b);
+        return single;
+    }
+}
+
+class Main{
+    public static void main(String[] args) {
+
+        //getting instance
+        Singleton single = Singleton.getInstance("Hello", "World");
+
+        System.out.println(single.c);
+    }
+}
