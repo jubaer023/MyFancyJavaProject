@@ -1,9 +1,10 @@
 public class singleton{  
-    static String c;
+    static String c,s;
     public singleton(String a,String b)
     {
-        this.c=a.concat(b);  
-    }   
+        this.c=a.concat(b); 
+        s = "I am a string part of Singleton class"; 
+    }    
     
     public static void main(String[] args) throws Exception{  
         String a="Instance";
